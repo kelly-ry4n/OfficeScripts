@@ -1,0 +1,6 @@
+
+In order to add a project, that project must be hosted on github and have a branch called "officescript". The officescipt branch of a project should only be updated when a new release for officescripts is ready.
+
+To update a project, a contributor should push a stable version to their officescript branch, and the request that their project be marked dirty. An admin marks the project dirty using mark_project_dirty().
+
+Once a project is marked dirty, it will be updated in the main repo  with a call to update_dirty_scripts()
