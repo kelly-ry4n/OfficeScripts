@@ -94,6 +94,7 @@ def mark_project_dirty(name,state,url):
 
 
 if __name__ == '__main__':
+    pass
     ## update_dirty_scripts()
     ## new_project('test_script', 'alpha', 'https://github.com/kelly-ry4n/test_script')
     ## mark_project_dirty('test_script', 'alpha', 'https://github.com/kelly-ry4n/test_script')
