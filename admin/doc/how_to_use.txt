@@ -1,0 +1,97 @@
+Here is a quick walkthrough of using the admin tools.
+
+1. Creating a valid project for build tools
+
+We need to have a project with a file called "officescriptinfo.py" which contains a dictionary with some information about the project and its scripts. This file is the only special requirement for a project.
+
+Here is a sample officescriptinfo.py. It is in the top level directory of its git folder.
+
+The list of dictionaries contain all the info for build tools. In this case, the project hosts
+two scripts, "testscript.py" and "testscript2.py".
+
+The total contents of the director is
+
+    .git/
+    mything.txt
+    officescriptinfo.py
+    README.md
+    testscript.py
+    testscript.pyc
+    testscript2.py
+
+"officescriptinfo.py"
+=======================================
+
+## Define some tests for testscript
+
+import testscript
+def test1():
+    assert 1 == 1
+
+def test2():
+    assert testscript.testfunc() is None
+
+script_1_tests = [test1,test2]
+
+## a list of dictionaries, each defining a script in this directory
+officeinfo = [{ ## This is the first script in the folder
+                "name"        : "testscript.py",
+                "version"     : "0.1",
+                "contact"     : "Kelly Ryan - kelly.ry4n@gmail.com",
+                "description" : "A test script for admin tools",
+                "manual"      : "This script prints testscript.py Script executed!",
+                "tests"       : script_1_tests,
+                "url"         : "https://github.com/kelly-ry4n/test_script"
+            }, { ## This is the second
+                "name"        : "testscript2.py",
+                "version"     : "0.1",
+                "contact"     : "Kelly Ryan - kelly.ry4n@gmail.com",
+                "description" : "A short descrition of the second test",
+                "manual"      : "Detailed project usage information",
+                "tests"       : [], ## No tests for this script. Naughty naughty.
+                "url"         : "https://github.com/kelly-ry4n/test_script"
+            }]
+
+"testscript.py"
+=========================================
+
+
+
+def testfunc():
+    return None
+
+if __name__ == '__main__':
+    print "testscript.py Script executed!"
+
+
+
+"testscript2.py"
+=========================================
+
+if __name__ == '__main__':
+    print "test script 2 executed"
+
+
+=========================================
+
+
+In other words, to make a project a valid OfficeScripts project, it must have "officescriptinfo.py" in the top level directory, and in that file the list of dictionaries "officeinfo" must be defined.
+
+
+The second requirement is that we will pull from the "officescript" branch of ALL projects. This allows people to have a stable working version for officescripts, and still use their git folder like normal.
+
+
+
+2. adding a new project
+
+First, make sure you're properly synced with git. I don't want to think about the bugs being unsynced could cause.
+
+The url of our test project is https://github.com/kelly-ry4n/OfficeScripts. We are going to name it "test_proj" in the state "alpha". I created the branch "officescript" in the project, which is a stable branch of master.
+
+To add a project, navigate to /admin/
+
+>python ./newuser.py
+
+    Project/Folder Name: test_proj
+    State (alpha | beta | release): alpha
+    Github url: https://github.com/kelly-ry4n/test_script
