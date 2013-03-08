@@ -1,2 +1,1 @@
-test_project https://github.com/kelly-ry4n/test_script alpha
 test_proj https://github.com/kelly-ry4n/test_script alpha

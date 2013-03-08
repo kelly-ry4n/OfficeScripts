@@ -88,10 +88,27 @@ First, make sure you're properly synced with git. I don't want to think about th
 
 The url of our test project is https://github.com/kelly-ry4n/OfficeScripts. We are going to name it "test_proj" in the state "alpha". I created the branch "officescript" in the project, which is a stable branch of master.
 
-To add a project, navigate to /admin/
+To add a project, navigate to /admin/, run newuser.py, enter the required info.
 
 >python ./newuser.py
 
     Project/Folder Name: test_proj
     State (alpha | beta | release): alpha
     Github url: https://github.com/kelly-ry4n/test_script
+
+This produces the following console output
+
+    Initialized empty Git repository in C:/Users/.../MY_GIT_PATH/.../
+    Updating origin
+    remote: Counting objects: 12, done.
+    remote: Compressing objects: 100% (10/10), done.
+    remote: Total 12 (delta 1), reused 8 (delta 0)
+    Unpacking objects: 100% (12/12), done.
+    From https://github.com/kelly-ry4n/test_script
+     * [new branch]      officescript -> origin/officescript
+    Branch officescript set up to track remote branch officescript from origin.
+    Switched to a new branch 'officescript'
+
+I now stage the changes in git, commit them, and push. I was hesitant to automate this part, so for now, do it by hand.
+
+And indeed, checking https://github.com/kelly-ry4n/OfficeScripts/tree/master/alpha/test_project we find that we have cloned the project
