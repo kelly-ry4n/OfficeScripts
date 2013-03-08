@@ -1,5 +1,7 @@
 import admin
 
-admin.update_dirty_scripts()
+if __name__ == '__main__':
+    
+    admin.update_dirty_scripts()
 
-print "Done updating dirty scripts"
+    print "Done updating dirty scripts"
