@@ -156,6 +156,6 @@ def get_project_from_url(url):
 
 
 if __name__ == '__main__':
-    mark_project_dirty('test_proj')
-    update_dirty_scripts()
-    # print get_project_from_name('test_proj')
+    # mark_project_dirty('test_proj')
+    # update_dirty_scripts()
+    print get_project_from_name('test_proj')

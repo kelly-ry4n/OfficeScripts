@@ -109,6 +109,11 @@ This produces the following console output
     Branch officescript set up to track remote branch officescript from origin.
     Switched to a new branch 'officescript'
 
-I now stage the changes in git, commit them, and push. I was hesitant to automate this part, so for now, do it by hand.
+I now stage the changes in git, commit them, and push. I was hesitant to automate this part for
+various reasons, so for now, do it by hand.
 
-And indeed, checking https://github.com/kelly-ry4n/OfficeScripts/tree/master/alpha/test_project we find that we have cloned the project
+And indeed, checking https://github.com/kelly-ry4n/OfficeScripts/tree/master/alpha/test_project
+we find that we have cloned the project into a submodule, and if you clone OfficeScripts, it 
+will be put in the appropriate place.
+
+Dirty marking can easily be done using the commented section of main() in admin.py until we make a small wrapper for it.
