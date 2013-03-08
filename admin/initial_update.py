@@ -12,8 +12,6 @@ initial_projects = [
 
 for i in initial_projects:
     name, state, url = *i
-
     admin.new_project(name, state, url)
-    admin.mark_project_dirty(name, state, url)
 
 admin.update_dirty_scripts()
