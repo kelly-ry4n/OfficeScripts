@@ -12,7 +12,7 @@ def update_dirty_scripts():
     empty_dirty_file()
 
 def empty_dirty_file():
-    with open('../dirty/dirty.txt','w'):
+    with open('../dirty/dirty.txt','w'):  ## Just clearns the file by overwriting it.
         pass
 
 
@@ -23,7 +23,8 @@ def get_dirty_scripts():
         raw_dirty_scripts = f.readlines()
 
     dirty_scripts = []
-    for i in raw_dirty_scripts:
+    for i in raw_dirty_scripts:  ## Turn each line into a dictionary which the other
+                                 ## functions can understand.
         scriptname, url, status = i.split()
         script = {'name':scriptname,'url':url, 'status':status}
 
@@ -36,8 +37,9 @@ def pull_from_project_url(script):
     ''' given a script dictionary, pulls from git to the appropriate folder. Raises ValueError
     if the project does not exist (name and status must be correct)'''
 
+    ## Checks for existance of folders to see if a script exists.
+
     script_path = '../' + script['status'] + '/' + script['name']
-    print script_path
     if os.path.isdir(script_path):
         git_to_folder(script['url'], script_path)
     else:
@@ -131,7 +133,7 @@ def get_projects_list():
     with open(project_path) as f:
         raw_project_scripts = f.readlines()
 
-    project_scripts = []
+    project_scripts = [] ## Read one per line from projecs.txt
     for i in raw_project_scripts:
         scriptname, url, status = i.split()
         script = {'name':scriptname,'url':url, 'status':status}
